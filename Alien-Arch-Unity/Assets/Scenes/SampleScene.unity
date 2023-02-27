@@ -238,6 +238,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMessage: Another line of text!
   updateMessage: Let's run an update!
+  message1: Have a Diet Coke
+  message2: Have a Sprite
+  message3: Have a Fanta
+  messagechoice: 1
+  messages:
+  - You rolled a Nat 20, congrats!
+  - You rolled a Nat 1, oh dear
+  - Just a regular old roll
+  - A d4 option!
 --- !u!4 &1850244399
 Transform:
   m_ObjectHideFlags: 0
