@@ -7,6 +7,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D physicsBody = null;
+    public float jumpSpeed = 10;
+    public Collider2D groundSensor = null;
+    public LayerMask groundLayer = 0;
 
     private void Awake()
     {
@@ -19,6 +22,24 @@ public class PlayerMovement : MonoBehaviour
         //set our new velocity to move in negative x (left) direction
         newVelocity.x = -1;
         physicsBody.velocity = newVelocity;
+    }
+
+    public void MoveRight()
+    {
+        Vector2 newVelocity = physicsBody.velocity;
+        //set our new velocity to move in negative x (right) direction
+        newVelocity.x = +1;
+        physicsBody.velocity = newVelocity;
+    }
+
+    public void Jump()
+    {
+        if (groundSensor.IsTouchingLayers(groundLayer))
+        {
+            Vector2 newVelocity = physicsBody.velocity;
+            newVelocity.y = jumpSpeed;
+            physicsBody.velocity = newVelocity;
+        }
     }
 
     // Start is called before the first frame update
